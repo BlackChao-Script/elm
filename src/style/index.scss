@@ -1,2 +1,6 @@
+//! 初始化样式
 @import './base/base.scss';
 @import './base/normalize.scss';
+//! 地址页样式
+@import './address/AllCity.scss';
+@import './address/HotCity.scss';

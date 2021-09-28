@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes: Array<RouteRecordRaw> = [
-  // { path: '', redirect: '/home' },
-  // { path: '/home', component: () => import('views/home.vue') },
+  { path: '', redirect: '/address' },
+  { path: '/address', component: () => import('../views/address/index.vue') },
 ]
 // 工厂函数创建router实例
 const router = createRouter({
