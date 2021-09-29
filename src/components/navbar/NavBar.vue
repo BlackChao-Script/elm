@@ -35,13 +35,15 @@
     width: 20%;
   }
   .centre {
-    width: 60%;
+    font-weight: 600;
+    width: 50%;
     overflow: hidden; //超出的文本隐藏
     text-overflow: ellipsis; //溢出用省略号显示
     white-space: nowrap; //溢出不换行
   }
   .right {
-    width: 20%;
+    width: 30%;
+    font-size: 14px;
   }
 }
 </style>

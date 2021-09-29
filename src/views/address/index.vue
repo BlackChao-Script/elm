@@ -1,8 +1,12 @@
 <template>
   <!-- nav -->
   <NavBar>
-    <template v-slot:left>ele.me</template>
-    <template v-slot:right>登录|注册</template>
+    <template v-slot:left>
+      <div>ele.me</div>
+    </template>
+    <template v-slot:right>
+      <div>登录|注册</div>
+    </template>
   </NavBar>
   <!-- 热门城市 -->
   <HotCity></HotCity>

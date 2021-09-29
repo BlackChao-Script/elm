@@ -1,0 +1,24 @@
+.search {
+  margin-top: 50px;
+}
+.search_history {
+  .history_title {
+    font-size: 15px;
+    margin-left: 15px;
+  }
+}
+.list_data {
+  padding: 10px;
+  border-bottom: 1px solid #e4e4e4;
+  .data_title {
+    font-size: 15px;
+  }
+  .data_address {
+    font-size: 13px;
+    color: #999999;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
