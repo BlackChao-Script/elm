@@ -19,6 +19,10 @@ import {
   Loading,
   Tabbar,
   TabbarItem,
+  Swipe,
+  SwipeItem,
+  Tag,
+  Rate,
 } from 'vant'
 
 const app = createApp(App)
@@ -36,3 +40,7 @@ app.component(Divider.name, Divider)
 app.component(Loading.name, Loading)
 app.component(Tabbar.name, Tabbar)
 app.component(TabbarItem.name, TabbarItem)
+app.component(Swipe.name, Swipe)
+app.component(SwipeItem.name, SwipeItem)
+app.component(Tag.name, Tag)
+app.component(Rate.name, Rate)

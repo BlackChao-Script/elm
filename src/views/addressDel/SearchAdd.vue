@@ -58,6 +58,7 @@ const onSearch = () => {
 //! 点击跳转至外卖主页
 const toTakeawayHome = (geohash: any, address: any) => {
   //! 把城市经纬度和城市地址保存到vuex中
+  store.state.geohashDataStr = geohash
   const geohashs = geohash.split(',')
   store.state.geohashData = geohashs
   store.state.addressData = address

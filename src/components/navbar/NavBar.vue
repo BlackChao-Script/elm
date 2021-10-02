@@ -32,11 +32,11 @@
   color: #fff;
   font-size: 15px;
   .left {
-    width: 20%;
+    width: 30%;
   }
   .centre {
     font-weight: 600;
-    width: 50%;
+    width: 40%;
     overflow: hidden; //超出的文本隐藏
     text-overflow: ellipsis; //溢出用省略号显示
     white-space: nowrap; //溢出不换行
