@@ -3,7 +3,12 @@
     <van-swipe class="my-swipe" :loop="false" indicator-color="pink">
       <van-swipe-item>
         <div class="footclass_item">
-          <div class="item_data" v-for="item in data.footClassDataa" :key="item.id">
+          <div
+            class="item_data"
+            v-for="item in data.footClassDataa"
+            :key="item.id"
+            @click="tocategoryall(item.title)"
+          >
             <div class="data_img">
               <img :src="item.image_url" />
             </div>
@@ -13,7 +18,12 @@
       </van-swipe-item>
       <van-swipe-item>
         <div class="footclass_item">
-          <div class="item_data" v-for="item in data.footClassDatab" :key="item.id">
+          <div
+            class="item_data"
+            v-for="item in data.footClassDatab"
+            :key="item.id"
+            @click="tocategoryall(item.title)"
+          >
             <div class="data_img">
               <img :src="item.image_url" />
             </div>
@@ -30,6 +40,12 @@
 import { onMounted } from '@vue/runtime-core'
 import { reactive } from "@vue/reactivity";
 import { getFootClassLIst } from '../../../../api/getfootclass'
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
+//! 使用路由
+const $router = useRouter()
+//! 使用vuex
+const store = useStore()
 //! 数据
 const data = reactive<any>({
   //! 食品分类数据
@@ -54,6 +70,11 @@ const getFooTData = () => {
 }
 //! 生命周期函数
 onMounted(getFooTData)
+//! 点击食品分类跳转至全部分类页面
+const tocategoryall = (title: any) => {
+  store.state.classTitle = title
+  $router.push(`/allfoot/${store.state.classTitle}`)
+}
 </script>
 
 <style scoped lang="scss">

@@ -4,8 +4,8 @@ export function request(config: any) {
   const instance = axios.create({
     baseURL: 'https://elm.cangdu.org',
     timeout: 3 * 1000,
+    withCredentials: true,
   })
-
   //请求拦截
   instance.interceptors.request.use(
     (config) => {

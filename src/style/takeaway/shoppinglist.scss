@@ -1,0 +1,94 @@
+.shopping {
+  margin-bottom: 80px;
+}
+.TreeSelect {
+  margin-top: 50px;
+}
+.ShoppingList_title {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #cccccc;
+  font-size: 15px;
+  .title_text {
+    margin-left: 5px;
+  }
+}
+.shoppinglist_list {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f1f1f1;
+  .list_img {
+    width: 20%;
+    img {
+      width: 100%;
+    }
+  }
+  .list_title {
+    width: 40%;
+    margin-left: 5px;
+
+    .title_a {
+      display: flex;
+      .a_icon {
+        width: 25%;
+      }
+      .a_title {
+        width: 60%;
+        overflow: hidden; //超出的文本隐藏
+        text-overflow: ellipsis; //溢出用省略号显示
+        white-space: nowrap; //溢出不换行
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+    .title_b {
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+      margin-top: 10px;
+      .b_rate {
+        width: 40%;
+      }
+      .b_text {
+        width: 55%;
+        font-size: 12px;
+        display: flex;
+        .text_b {
+          margin-left: 5px;
+          color: #666666;
+        }
+      }
+    }
+    .title_c {
+      margin-top: 10px;
+      margin-left: 5px;
+      font-size: 12px;
+      color: #666666;
+    }
+  }
+  .list_text {
+    width: 40%;
+    .text_a {
+      margin-left: 90px;
+    }
+    .text_b {
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+    .text_c {
+      color: #666666;
+      font-size: 5px;
+      margin-top: 10px;
+      text-align: center;
+      .c_color {
+        color: pink;
+      }
+    }
+  }
+}
+.loging{
+  margin-top: 100px;
+}

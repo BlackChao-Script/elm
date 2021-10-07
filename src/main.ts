@@ -23,6 +23,14 @@ import {
   SwipeItem,
   Tag,
   Rate,
+  DropdownMenu,
+  DropdownItem,
+  TreeSelect,
+  Form,
+  Field,
+  CellGroup,
+  Image as VanImage,
+  Cell,
 } from 'vant'
 
 const app = createApp(App)
@@ -44,3 +52,11 @@ app.component(Swipe.name, Swipe)
 app.component(SwipeItem.name, SwipeItem)
 app.component(Tag.name, Tag)
 app.component(Rate.name, Rate)
+app.component(DropdownMenu.name, DropdownMenu)
+app.component(DropdownItem.name, DropdownItem)
+app.component(TreeSelect.name, TreeSelect)
+app.component(Form.name, Form)
+app.component(Field.name, Field)
+app.component(CellGroup.name, CellGroup)
+app.component(VanImage.name, VanImage)
+app.component(Cell.name, Cell)

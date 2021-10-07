@@ -8,7 +8,12 @@
       <div class="title_text">附近商家</div>
     </div>
     <!-- 店铺列表 -->
-    <div class="shoppinglist_list" v-for="item in data.shoppingList" :key="item.id">
+    <div
+      v-if="data.showshopping"
+      class="shoppinglist_list"
+      v-for="item in data.shoppingList"
+      :key="item.id"
+    >
       <div class="list_img">
         <img :src="item.image_url" />
       </div>
@@ -47,9 +52,14 @@
           <van-tag color="#ffc0cb" plain>准时达</van-tag>
         </div>
         <div class="text_c">
-          <span>{{ item.distance }}</span>/
+          <span>{{ item.distance }}</span> /
           <span class="c_color">{{ item.order_lead_time }}</span>
         </div>
+      </div>
+    </div>
+    <div v-else>
+      <div class="loging">
+        <van-loading color="pink" size="35" vertical>加载中...</van-loading>
       </div>
     </div>
   </div>
@@ -68,7 +78,9 @@ const data = reactive<any>({
   //* 城市的经纬度
   geohashData: '',
   //* 店铺列表信息
-  shoppingList: []
+  shoppingList: [],
+  //* 是否展示商家列表
+  showshopping: false
 })
 //! 生命周期函数
 onMounted(() => {
@@ -82,94 +94,8 @@ onMounted(() => {
       arr[i].image_url = 'https://elm.cangdu.org/img/' + arr[i].image_path
     }
     data.shoppingList = arr
+    //* 展示商家列表
+    data.showshopping = true
   })
 })
 </script>
-
-<style scoped lang="scss">
-.shopping {
-  margin-bottom: 80px;
-  .ShoppingList_title {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    color: #cccccc;
-    font-size: 15px;
-    .title_text {
-      margin-left: 5px;
-    }
-  }
-  .shoppinglist_list {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #f1f1f1;
-    .list_img {
-      width: 20%;
-      img {
-        width: 100%;
-      }
-    }
-    .list_title {
-      width: 40%;
-      margin-left: 5px;
-
-      .title_a {
-        display: flex;
-        .a_icon {
-          width: 25%;
-        }
-        .a_title {
-          width: 60%;
-          overflow: hidden; //超出的文本隐藏
-          text-overflow: ellipsis; //溢出用省略号显示
-          white-space: nowrap; //溢出不换行
-          font-size: 14px;
-          font-weight: 600;
-        }
-      }
-      .title_b {
-        display: flex;
-        align-items: center;
-        margin-left: 5px;
-        margin-top: 10px;
-        .b_rate {
-          width: 40%;
-        }
-        .b_text {
-          width: 55%;
-          font-size: 12px;
-          display: flex;
-          .text_b {
-            margin-left: 5px;
-            color: #666666;
-          }
-        }
-      }
-      .title_c {
-        margin-top: 10px;
-        margin-left: 5px;
-        font-size: 12px;
-        color: #666666;
-      }
-    }
-    .list_text {
-      width: 40%;
-      .text_a {
-        margin-left: 68px;
-      }
-      .text_b {
-        margin-left: 10px;
-        margin-top: 10px;
-      }
-      .text_c {
-        font-size: 5px;
-        margin-top: 10px;
-        .c_color {
-          color: pink;
-        }
-      }
-    }
-  }
-}
-</style>
