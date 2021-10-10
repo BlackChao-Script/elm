@@ -145,7 +145,7 @@ const getClassData = () => {
   console.log(store.state.classId)
   getIdShopping(store.state.geohashData[0], store.state.geohashData[1], store.state.classId).then((res: any) => {
     const arr = res.data
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       arr[i].image_url = 'https://elm.cangdu.org/img/' + arr[i].image_path
     }
     data.ClassShoppingList = arr
@@ -229,5 +229,3 @@ const sortShopping = (value: any) => {
 }
 </script>
 
-<style scoped lang="scss">
-</style>

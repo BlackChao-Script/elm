@@ -5,7 +5,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/addressDel/:id',
     component: () => import('../views/addressDel/index.vue'),
-    children: [],
   },
   {
     path: '/takeaway',
@@ -52,6 +51,18 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     component: () => import('../views/login.vue'),
+  },
+  {
+    path: '/services',
+    component: () => import('../views/services/index.vue'),
+  },
+  {
+    path: '/shoppingdet/:id',
+    component: () => import('../views/shoppingDet/index.vue'),
+  },
+  {
+    path: '/dets',
+    component: () => import('../views/dets/index.vue'),
   },
 ]
 // 工厂函数创建router实例

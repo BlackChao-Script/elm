@@ -4,6 +4,10 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from "vue-router";
+
+//! 使用路由
+const $route = useRoute()
 </script>
 
 <style>

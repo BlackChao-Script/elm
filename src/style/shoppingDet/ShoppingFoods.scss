@@ -1,0 +1,234 @@
+.skeleton {
+  margin-top: 5px;
+  .skeleton_tab {
+    .taba {
+      display: flex;
+      .taba_l {
+        position: fixed;
+        width: 30%;
+        top: 150px;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .taba_r {
+        position: fixed;
+        width: 80%;
+        top: 150px;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        margin-left: 90px;
+        .r_content {
+          .content_title {
+            height: 50px;
+            background-color: #f7f8fa;
+            margin-bottom: 10px;
+            line-height: 50px;
+            .title_a {
+              margin-left: 5px;
+              color: #666666;
+              font-weight: 600;
+            }
+            .title_b {
+              font-size: 13px;
+              margin-left: 5px;
+              color: #ccc;
+            }
+          }
+          .content_text {
+            display: flex;
+            border-bottom: 1px solid #fafafa;
+            margin-bottom: 10px;
+            .text_img {
+              width: 20%;
+            }
+            .text_a {
+              width: 60%;
+              margin-left: 10px;
+              .a_title1 {
+                font-weight: 600;
+                overflow: hidden; //超出的文本隐藏
+                text-overflow: ellipsis; //溢出用省略号显示
+                white-space: nowrap; //溢出不换行
+              }
+              .a_title2 {
+                font-size: 14px;
+                color: #b1b1b1;
+                margin-top: 5px;
+              }
+              .a_title3 {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+              .a_title5 {
+                margin-top: 10px;
+                color: #ff7417;
+              }
+            }
+            .text_b {
+              width: 20%;
+              margin-top: 20px;
+              color: pink;
+            }
+          }
+        }
+      }
+    }
+    .tabb {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 10px;
+      .tabb_left {
+        width: 50%;
+        .left_synthesis {
+          color: #ff6600;
+          font-size: 30px;
+        }
+        .left_a {
+          font-size: 15px;
+          color: #b57e66;
+        }
+        .left_b {
+          margin-top: 5px;
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      .tabb_right {
+        width: 50%;
+        font-size: 15px;
+        .right_a {
+          display: flex;
+          margin-top: 5px;
+          color: #b57e66;
+          .a_stay {
+            margin: 0 10px;
+          }
+          .a_fen {
+            color: #ff6600;
+          }
+          .a_stay {
+            color: #999999;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .tabc {
+      margin-top: 10px;
+      .tabc_a {
+        display: flex;
+        flex-wrap: wrap;
+        .a_item {
+          width: 30%;
+          padding: 4px;
+          text-align: center;
+          margin: 5px;
+          color: #fff;
+          font-size: 14px;
+          background-color: #ccc;
+          border-radius: 5%;
+          -webkit-border-radius: 5%;
+          -moz-border-radius: 5%;
+          -ms-border-radius: 5%;
+          -o-border-radius: 5%;
+        }
+        .bgccolor {
+          background-color: pink;
+        }
+      }
+    }
+    .tabd {
+      margin-top: 10px;
+      .tabd_valuateLists {
+        display: flex;
+        border-top: 1px solid #f5f5f5;
+        padding-top: 20px;
+        .valuateLists_img {
+          width: 20%;
+          margin-left: 10px;
+        }
+        .valuateLists_text {
+          width: 60%;
+          .text_name {
+            font-size: 13px;
+          }
+          .text_star {
+            display: flex;
+            align-items: center;
+            .star_b {
+              margin-left: 10px;
+              font-size: 13px;
+              color: #cccccc;
+              margin-top: 10px;
+            }
+          }
+          .text_tag {
+            display: flex;
+            margin: 10px 0;
+            .tag_item {
+              margin-left: 5px;
+              width: 50px;
+              height: 20px;
+              text-align: center;
+              line-height: 20px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              background-color: pink;
+              font-size: 12px;
+              color: #fff;
+              border-radius: 10%;
+              -webkit-border-radius: 10%;
+              -moz-border-radius: 10%;
+              -ms-border-radius: 10%;
+              -o-border-radius: 10%;
+            }
+          }
+        }
+        .valuateLists_time {
+          width: 20%;
+          font-size: 10px;
+          color: #cccccc;
+        }
+      }
+    }
+  }
+  .skeleton_submitBar {
+    position: relative;
+    .skeleton_submitBar_icon {
+      position: absolute;
+      top: -20px;
+      left: 25px;
+      right: 0;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: pink;
+      background-color: #f7f8fa;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+  .skeleton_sheet {
+    .sheet_content {
+      color: pink;
+    }
+  }
+}

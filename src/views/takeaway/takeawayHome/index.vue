@@ -55,11 +55,3 @@ const toSearchShopping = () => {
 }
 
 </script>
-
-<style scoped lang="scss">
-.division {
-  width: 100%;
-  height: 17px;
-  background-color: #f5f5f5;
-}
-</style>

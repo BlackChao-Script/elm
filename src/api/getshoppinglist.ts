@@ -31,3 +31,15 @@ export function getIdShopping(
     },
   })
 }
+//! 获取店铺详细
+export function getShoppingDetailedData(shopid: any) {
+  return request({
+    url: `/shopping/restaurant/${shopid}`,
+  })
+}
+//! 获取店铺食品分类
+export function getcategory(restaurant_id: any) {
+  return request({
+    url: `/shopping/getcategory/${restaurant_id}`,
+  })
+}

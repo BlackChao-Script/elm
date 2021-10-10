@@ -1,0 +1,45 @@
+.shoppingtitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  opacity: 0.8;
+  background-color: pink;
+  .shoppingtitle_img {
+    width: 25%;
+    margin-left: 10px;
+  }
+  .shoppingtitle_text {
+    width: 60%;
+    .text_name {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .text_a {
+      font-size: 14px;
+      color: #fff;
+      margin-top: 5px;
+    }
+    .text_b {
+      font-size: 14px;
+      color: #fff;
+      margin-top: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .shoppingtitle_right {
+    width: 10%;
+    color: #fff;
+    margin-left: 10px;
+  }
+  .goleft {
+    position: absolute;
+    color: #fff;
+    top: 0px;
+    left: 0px;
+    font-size: 23px;
+  }
+}

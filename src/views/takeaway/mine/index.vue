@@ -16,14 +16,11 @@
 </template>
 
 <script setup lang='ts'>
-import { useRouter } from 'vue-router';
 //! 引入组件
 import NavBar from '../../../components/navbar/NavBar.vue'
 import Mymssg from './compt/Mymssg.vue'
 import MyBalance from './compt/MyBalance.vue'
 import Mycell from './compt/Mycell.vue'
-//! 使用路由
-const $router = useRouter()
 </script>
 
 <style scoped lang="scss">

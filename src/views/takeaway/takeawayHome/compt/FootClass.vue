@@ -76,34 +76,3 @@ const tocategoryall = (title: any) => {
   $router.push(`/allfoot/${store.state.classTitle}`)
 }
 </script>
-
-<style scoped lang="scss">
-.footclass {
-  margin-top: 50px;
-  .my-swipe .van-swipe-item {
-    font-size: 20px;
-    height: 200px;
-    text-align: center;
-    .footclass_item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      .item_data {
-        width: 25%;
-        height: 100%;
-        margin-top: 15px;
-        .data_img {
-          img {
-            width: 50%;
-          }
-        }
-        .data_title {
-          font-size: 15px;
-          color: #ccc;
-        }
-      }
-    }
-  }
-}
-</style>

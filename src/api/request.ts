@@ -3,7 +3,7 @@ import axios from 'axios'
 export function request(config: any) {
   const instance = axios.create({
     baseURL: 'https://elm.cangdu.org',
-    timeout: 3 * 1000,
+    timeout: 5 * 1000,
     withCredentials: true,
   })
   //请求拦截

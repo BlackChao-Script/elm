@@ -1,0 +1,20 @@
+.activity {
+  margin-top: 70px;
+  height: 200px;
+  .activity_title {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    font-size: 17px;
+  }
+  .active_a {
+    margin-top: 10px;
+    .a_text {
+      margin-left: 6px;
+    }
+  }
+}
+.divider {
+  height: 10px;
+  background-color: #ebebeb;
+}

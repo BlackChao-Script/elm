@@ -13,6 +13,7 @@
       class="shoppinglist_list"
       v-for="item in data.shoppingList"
       :key="item.id"
+      @click="toShoppingDetailed(item.id)"
     >
       <div class="list_img">
         <img :src="item.image_url" />
@@ -68,11 +69,14 @@
 <script setup lang='ts'>
 import { reactive } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
+import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 //! 引入网络请求
 import { getShoppingList } from '../../../../api/getshoppinglist'
 //! 使用vuex
 const store = useStore()
+//! 使用路由
+const $router = useRouter()
 //! 数据
 const data = reactive<any>({
   //* 城市的经纬度
@@ -98,4 +102,8 @@ onMounted(() => {
     data.showshopping = true
   })
 })
+//! 点击店铺进入店铺详细与分类
+const toShoppingDetailed = (id: Number) => {
+  $router.push(`/shoppingdet/${id}`)
+}
 </script>

@@ -31,6 +31,18 @@ import {
   CellGroup,
   Image as VanImage,
   Cell,
+  Skeleton,
+  Collapse,
+  CollapseItem,
+  Sidebar,
+  SidebarItem,
+  Tab,
+  Tabs,
+  SubmitBar,
+  Badge,
+  ActionSheet,
+  Card,
+  List,
 } from 'vant'
 
 const app = createApp(App)
@@ -60,3 +72,15 @@ app.component(Field.name, Field)
 app.component(CellGroup.name, CellGroup)
 app.component(VanImage.name, VanImage)
 app.component(Cell.name, Cell)
+app.component(Skeleton.name, Skeleton)
+app.component(Collapse.name, Collapse)
+app.component(CollapseItem.name, CollapseItem)
+app.component(Sidebar.name, Sidebar)
+app.component(SidebarItem.name, SidebarItem)
+app.component(Tab.name, Tab)
+app.component(Tabs.name, Tabs)
+app.component(SubmitBar.name, SubmitBar)
+app.component(Badge.name, Badge)
+app.component(ActionSheet.name, ActionSheet)
+app.component(Card.name, Card)
+app.component(List.name, List)

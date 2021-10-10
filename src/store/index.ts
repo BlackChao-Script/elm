@@ -12,6 +12,8 @@ export default createStore({
     classId: '',
     //* 分类标题
     classTitle: '',
+    //* 详细店铺数据
+    shoopingDelData: [],
   },
   mutations: {},
   actions: {},
