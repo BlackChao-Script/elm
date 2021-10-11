@@ -28,7 +28,12 @@
   <!-- 商家 -->
   <div v-else-if="!data.showrecords" class="search_shopping">
     <div class="shopping_title">商家</div>
-    <div class="shopping_box" v-for="(item,index) in data.searchShoppingData" :key="index">
+    <div
+      class="shopping_box"
+      v-for="(item,index) in data.searchShoppingData"
+      :key="index"
+      @click="toShoppingDet(item.id)"
+    >
       <div class="box_img">
         <img :src="item.image_url" />
       </div>
@@ -48,11 +53,14 @@
 
 <script setup lang='ts'>
 import { reactive } from '@vue/reactivity';
+import { useRouter } from 'vue-router';
 //! 引入网络请求方法
 import { useStore } from 'vuex'
 import { searchShopping } from '../../../../api/searchshopp'
 //! 使用vuex
 const store = useStore()
+//! 使用路由
+const $router = useRouter()
 //! 数据
 const data = reactive<any>({
   //* 要搜索的值
@@ -96,5 +104,9 @@ const getSearchData = (item: any) => {
 //! 点击删除图标时的方法
 const remSearchData = (item: any) => {
   data.searchRecordsData.pop(item)
+}
+//! 点击店铺进入店铺详细与分类
+const toShoppingDet = (id: Number) => {
+  $router.push(`/shoppingdet/${id}`)
 }
 </script>

@@ -14,7 +14,12 @@
     </van-dropdown-menu>
   </div>
   <!-- 全部商品列表 -->
-  <div class="shoppinglist_list" v-for="item in data.ClassShoppingList" :key="item.id">
+  <div
+    class="shoppinglist_list"
+    v-for="item in data.ClassShoppingList"
+    :key="item.id"
+    @click="toShoppingDet(item.id)"
+  >
     <div class="list_img">
       <img :src="item.image_url" />
     </div>
@@ -63,11 +68,14 @@
 <script setup lang='ts'>
 import { reactive, ref } from '@vue/reactivity';
 import { onMounted } from '@vue/runtime-core';
+import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 //! 引入网络请求方法
 import { getAllShoppingLIst, getIdShopping } from '../../../../api/getshoppinglist'
 //! 使用vuex
 const store = useStore()
+//! 使用路由
+const $router = useRouter()
 //! 数据
 const data = reactive<any>({
   //* 所有分类
@@ -226,6 +234,10 @@ const sortShopping = (value: any) => {
     getClassData()
 
   }
+}
+//! 点击店铺进入店铺详细与分类
+const toShoppingDet = (id: Number) => {
+  $router.push(`/shoppingdet/${id}`)
 }
 </script>
 

@@ -146,7 +146,12 @@
       </div>
       <!-- 购物导航 -->
       <div v-if="data.showSubmitBar" class="skeleton_submitBar">
-        <van-submit-bar :price="data.foddsPrice" button-text="去结算" button-color="pink">
+        <van-submit-bar
+          @submit="onSubmit"
+          :price="data.foddsPrice"
+          button-text="去结算"
+          button-color="pink"
+        >
           <div class="skeleton_submitBar_icon" @click="clickSubmitBar">
             <van-badge :content="data.foodsCount">
               <van-icon name="shopping-cart-o" />
@@ -185,8 +190,12 @@ import { useRoute } from "vue-router";
 //! 引入网络请求方法
 import { getcategory } from '../../../api/getshoppinglist'
 import { getValuate, getValuateClass, getValuateMessageData } from '../../../api/getEvaluate'
+import { addCarts } from '../../../api/addCarts'
+import { useStore } from "vuex";
 //! 使用路由
 const $route = useRoute()
+//! 使用vuex
+const store = useStore()
 //! 数据
 const data = reactive<any>({
   //* 骨架屏幕是否显示
@@ -323,11 +332,13 @@ const addfoods = (foods: any) => {
   data.foodsCount = data.addSubmitBarFoodsList.reduce((prev: any, next: any) => {
     return prev + next.original_price
   }, 0)
+  addCartSData()
 }
 //! 点击购物车卡片中的 + 时触发
 const addNum = (foods: any) => {
   //* 调用addfoods函数
   addfoods(foods)
+  addCartSData()
 }
 //! 点击购物车卡片中的 - 时触发
 const jianNum = (item: any, i: any) => {
@@ -351,6 +362,13 @@ const jianNum = (item: any, i: any) => {
   if (data.foodsCount == 0) {
     data.show = false
   }
+}
+const addCartSData = () => {
+  //* 添加到购物车
+  addCarts($route.params.id, store.state.geohasDataStr, data.addSubmitBarFoodsList)
+}
+//! 点击购物栏中的去结算时触发
+const onSubmit = () => {
 }
 //! 获取评论数据
 const getValuateData = () => {
