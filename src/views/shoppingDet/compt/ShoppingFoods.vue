@@ -326,12 +326,14 @@ const addfoods = (foods: any) => {
   //* 遍历得到总金额
   for (let i in data.addSubmitBarFoodsList) {
     price = price + (data.addSubmitBarFoodsList[i].original_price * data.addSubmitBarFoodsList[i].price)
-  };
+  }
   data.foddsPrice = price
   //* 商品总数
   data.foodsCount = data.addSubmitBarFoodsList.reduce((prev: any, next: any) => {
     return prev + next.original_price
   }, 0)
+  //* 保存到vuex
+  store.state.FoodsList = data.addSubmitBarFoodsList
   addCartSData()
 }
 //! 点击购物车卡片中的 + 时触发

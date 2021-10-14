@@ -14,6 +14,7 @@ export default createStore({
     classTitle: '',
     //* 详细店铺数据
     shoopingDelData: [],
+    FoodsList: [],
   },
   mutations: {},
   actions: {},
