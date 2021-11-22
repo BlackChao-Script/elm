@@ -16,7 +16,6 @@ const data = reactive<any>({
 })
 onMounted(() => {
   data.orderListData = store.state.FoodsList
-  console.log(data.orderListData)
 })
 </script>
 

@@ -237,7 +237,7 @@ const getcategoryData = () => {
   getcategory(id).then((res: any) => {
     //* 把 res.data.category_list 里 foods 为空的数组排除掉
     const arr = res.data.category_list.filter((value: any) => value.foods.length !== 0)
-    //* 把啊arr数组里面的foods的图片地址加上前缀地址
+    //* 把arr数组里面的foods的图片地址加上前缀地址
     for (let i = 0; i < arr.length; i++) {
       for (let j = 0; j < arr[i].foods.length; j++)
         arr[i].foods[j].image_path = 'https://elm.cangdu.org/img/' + arr[i].foods[j].image_path
@@ -252,7 +252,6 @@ const getcategoryData = () => {
 const divNodes = ref<any>({})
 //! 切换tab栏时触发
 const onClickTab = (title: any) => {
-
   if (title.title === '评论') {
     data.showSubmitBar = false
   } else {
