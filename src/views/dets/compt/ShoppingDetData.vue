@@ -35,10 +35,16 @@
 import { reactive } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 import { useStore } from "vuex";
+//! 定义接口
+interface IDatatype {
+  shoopingDelDatas: any,
+  activeName: string[],
+  activeNameb: string[]
+}
 //! 使用vuex
 const store = useStore()
 //! 数据
-const data = reactive<any>({
+const data = reactive<IDatatype>({
   //* 店铺详细数据
   shoopingDelDatas: [],
   //* 展开的折叠面板1

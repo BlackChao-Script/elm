@@ -31,10 +31,16 @@ import { onMounted } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
 //! 引入网络请求方法
 import { getcityList } from '../../api/getcity'
+//! 定义接口
+interface IData {
+  allCityData: any,
+  cityKey: object[],
+  showcity: boolean
+}
 //! 使用路由
 const $router = useRouter()
 //! 数据
-const data = reactive<any>({
+const data = reactive<IData>({
   //* 所有城市数据
   allCityData: [],
   //* 城市首字母
@@ -44,12 +50,12 @@ const data = reactive<any>({
 })
 //! 获取所有城市数据
 const getAllCityData = () => {
-  getcityList('group').then((res: any) => {
+  getcityList('group').then((res) => {
     const obj = res.data
     //* 对城市数据进行排序
     //& 排序的函数
     function objKeySort(obj: any) {
-      let newkey = Object.keys(obj).sort();
+      let newkey: string[] = Object.keys(obj).sort();
       //& 先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
       //& 创建一个新的对象，用于存放排好序的键值对
       const newObj: any = {}
@@ -68,7 +74,7 @@ const getAllCityData = () => {
   })
 }
 //! 点击城市跳转方法
-const toAddressDel = (id: any) => {
+const toAddressDel = (id: string) => {
   $router.push('/addressDel/' + id)
 }
 //! 生命周期函数

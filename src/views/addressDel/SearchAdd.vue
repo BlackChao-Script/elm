@@ -34,12 +34,17 @@ import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 //! 引入网络请求方法
 import { SearchAddress } from '../../api/searchAddress'
+//! 定义接口
+interface IDatatype {
+  searchData: string,
+  searchList: any[]
+}
 //! 使用路由
 const $router = useRouter()
 //! 使用vuex
 const store = useStore()
 //! 数据
-const data = reactive<any>({
+const data = reactive<IDatatype>({
   //* 搜索的值
   searchData: '',
   //* 搜索到的数据
@@ -51,12 +56,12 @@ const props = defineProps({
 })
 //! 点击搜索时触发
 const onSearch = () => {
-  SearchAddress(props.id, data.searchData).then((res: any) => {
+  SearchAddress(props.id, data.searchData).then((res) => {
     data.searchList = res.data
   })
 }
 //! 点击跳转至外卖主页
-const toTakeawayHome = (geohash: any, address: any) => {
+const toTakeawayHome = (geohash: string, address: string) => {
   //! 把城市经纬度和城市地址保存到vuex中
   store.state.geohashDataStr = geohash
   const geohashs = geohash.split(',')

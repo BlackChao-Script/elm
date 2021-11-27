@@ -192,12 +192,31 @@ import { getcategory } from '../../../api/getshoppinglist'
 import { getValuate, getValuateClass, getValuateMessageData } from '../../../api/getEvaluate'
 import { addCarts } from '../../../api/addCarts'
 import { useStore } from "vuex";
+//! 定义接口
+interface IData {
+  loading: boolean,
+  active1: number,
+  active2: number,
+  foodCategoryData: any,
+  showSubmitBar: boolean,
+  show: boolean,
+  foodsCount: any,
+  foddsPrice: number,
+  addSubmitBarFoodsList: any,
+  valuateFractiondata: any,
+  valuateClassData: any,
+  j: number,
+  valuateClassName: string,
+  limit: number,
+  valuateList: any,
+  offset: number
+}
 //! 使用路由
 const $route = useRoute()
 //! 使用vuex
 const store = useStore()
 //! 数据
-const data = reactive<any>({
+const data = reactive<IData>({
   //* 骨架屏幕是否显示
   loading: true,
   //* 标签页选中
@@ -233,8 +252,8 @@ const data = reactive<any>({
 })
 //! 获取食品分类数据
 const getcategoryData = () => {
-  const id = $route.params.id
-  getcategory(id).then((res: any) => {
+  const id: string | string[] = $route.params.id
+  getcategory(id).then((res) => {
     //* 把 res.data.category_list 里 foods 为空的数组排除掉
     const arr = res.data.category_list.filter((value: any) => value.foods.length !== 0)
     //* 把arr数组里面的foods的图片地址加上前缀地址
@@ -242,7 +261,7 @@ const getcategoryData = () => {
       for (let j = 0; j < arr[i].foods.length; j++)
         arr[i].foods[j].image_path = 'https://elm.cangdu.org/img/' + arr[i].foods[j].image_path
     }
-    data.ClassShoppingList = arr
+    // data.ClassShoppingList = arr
     data.foodCategoryData = arr
     //* 隐藏骨架屏
     data.loading = false

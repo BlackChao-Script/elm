@@ -22,21 +22,26 @@ import { useRoute, useRouter } from "vue-router";
 //! 引入组件
 import NavBar from '../../components/navbar/NavBar.vue'
 import SearchAdd from './SearchAdd.vue'
+//! 定义接口
+interface IDatatype {
+  id: any,
+  citydata: any
+}
 //! 引入网络请求方法
 import { getcityDel } from '../../api/getcity'
 //! 使用路由
 const $route = useRoute()
 const $router = useRouter()
 //! 数据
-const data = reactive<any>({
+const data = reactive<IDatatype>({
   //* 跳转页面携带的城市id
-  id: 0,
+  id: '',
   //* 城市数据
-  citydata: []
+  citydata: {}
 })
 //! 根据id获取城市信息
 const getCityData = () => {
-  getcityDel(data.id).then((res: any) => {
+  getcityDel(data.id).then((res) => {
 
     data.citydata = res.data
   })

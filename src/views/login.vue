@@ -71,10 +71,17 @@ import NavBar from '../components/navbar/NavBar.vue'
 //! 引入网络请求方法
 import { getVerificationCode, login } from '../api/login'
 import { useRouter } from "vue-router";
+//! 定义接口
+interface IData {
+  username: string,
+  password: string,
+  VerificationCode: string,
+  VerificationCodeImg: string
+}
 //! 使用路由
 const $router = useRouter()
 //!数据
-const data = reactive<any>({
+const data = reactive<IData>({
   //* 用户名
   username: '',
   //* 密码
@@ -86,7 +93,7 @@ const data = reactive<any>({
 })
 //! 获取验证码
 const getVerificationCodeData = () => {
-  getVerificationCode().then((res: any) => {
+  getVerificationCode().then((res) => {
     console.log(res)
     data.VerificationCodeImg = res.data.code
   })
@@ -98,8 +105,7 @@ const replaceVIC = () => {
   getVerificationCodeData()
 }
 //! 提交表单时触发
-const onSubmit = (values: any) => {
-  console.log(data.VerificationCode)
+const onSubmit = (values: object) => {
   if (!values) return
   login(data.username, data.password, data.VerificationCode).then((res: any) => {
     console.log(res)

@@ -28,12 +28,12 @@ import { getcityList } from '../../api/getcity'
 //! 使用路由
 const $router = useRouter()
 //! 数据类型接口
-interface datatype {
+interface IDatatype {
   HotcityData: Array<any>,
   showcity: Boolean
 }
 //! 数据
-const data = reactive<datatype>({
+const data = reactive<IDatatype>({
   //* 热门城市数据
   HotcityData: [],
   //* 是否显示城市信息
@@ -41,14 +41,14 @@ const data = reactive<datatype>({
 })
 //! 获取热门城市数据
 const getHotCityData = () => {
-  getcityList('hot').then((res: any) => {
+  getcityList('hot').then((res) => {
     data.HotcityData = res.data
     //* 显示城市信息
     data.showcity = true
   })
 }
 //! 点击城市跳转方法
-const toAddressDel = (id: any) => {
+const toAddressDel = (id: string) => {
   $router.push('/addressDel/' + id)
 }
 //! 生命周期函数
