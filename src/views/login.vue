@@ -94,7 +94,6 @@ const data = reactive<IData>({
 //! 获取验证码
 const getVerificationCodeData = () => {
   getVerificationCode().then((res) => {
-    console.log(res)
     data.VerificationCodeImg = res.data.code
   })
 }
@@ -108,7 +107,6 @@ const replaceVIC = () => {
 const onSubmit = (values: object) => {
   if (!values) return
   login(data.username, data.password, data.VerificationCode).then((res: any) => {
-    console.log(res)
   })
 
 }
@@ -117,35 +115,3 @@ const toAddress = () => {
   $router.push('/address')
 }
 </script>
-
-<style scoped lang="scss">
-.from {
-  margin-top: 60px;
-  .from_VerificationCode {
-    display: flex;
-    .VerificationCode_a {
-      width: 60%;
-    }
-    .VerificationCode_b {
-      width: 40%;
-      display: flex;
-      align-items: center;
-      .b_btn {
-        margin-left: 15px;
-        font-size: 15px;
-        .btn_color {
-          color: pink;
-        }
-      }
-    }
-  }
-  .tips {
-    color: pink;
-    font-size: 15px;
-    padding: 10px;
-    .tips_b {
-      margin-top: 10px;
-    }
-  }
-}
-</style>

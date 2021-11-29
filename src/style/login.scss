@@ -1,0 +1,29 @@
+.from {
+  margin-top: 60px;
+  .from_VerificationCode {
+    display: flex;
+    .VerificationCode_a {
+      width: 60%;
+    }
+    .VerificationCode_b {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      .b_btn {
+        margin-left: 15px;
+        font-size: 15px;
+        .btn_color {
+          color: pink;
+        }
+      }
+    }
+  }
+  .tips {
+    color: pink;
+    font-size: 15px;
+    padding: 10px;
+    .tips_b {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,6 +1,10 @@
 //! 初始化样式
 @import './base/base.scss';
 @import './base/normalize.scss';
+//! 登录样式
+@import './login.scss';
+//! nav组件
+@import './navbar/index.scss';
 //! 地址页样式
 @import './address/AllCity.scss';
 @import './address/HotCity.scss';
